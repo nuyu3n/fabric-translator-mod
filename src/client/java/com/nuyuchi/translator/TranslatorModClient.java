@@ -35,10 +35,8 @@ public class TranslatorModClient implements ClientModInitializer {
     private static final AtomicInteger messageIdCounter = new AtomicInteger(0);
     private static final Map<Integer, String> pendingTranslations = new ConcurrentHashMap<>();
     
-    // 【追加】翻訳結果を保存するキャッシュ
     private static final Map<String, String> translationCache = new ConcurrentHashMap<>();
 
-    // HttpClientの設定（followRedirectsにより自動で転送先を追跡します）
     private static final HttpClient HTTP_CLIENT = HttpClient.newBuilder()
             .followRedirects(HttpClient.Redirect.NORMAL)
             .connectTimeout(Duration.ofSeconds(10))
@@ -56,7 +54,6 @@ public class TranslatorModClient implements ClientModInitializer {
             Path urlFile = configDir.resolve("translator-url.txt");
             Path langFile = configDir.resolve("translator-lang.txt");
 
-            // URL設定ファイル
             if (!Files.exists(urlFile)) {
                 Files.writeString(urlFile, "https://script.google.com/macros/.../exec");
                 TranslatorMod.LOGGER.warn("API URL file created: " + urlFile);
@@ -64,7 +61,6 @@ public class TranslatorModClient implements ClientModInitializer {
                 apiUrl = Files.readString(urlFile).trim();
             }
 
-            // 言語設定ファイル
             if (!Files.exists(langFile)) {
                 Files.writeString(langFile, "ja");
             } else {
@@ -159,9 +155,6 @@ public class TranslatorModClient implements ClientModInitializer {
         }
     }
 
-    /**
-     * 翻訳を実行し、メインスレッドで結果を表示
-     */
     public static void translateText(String originalText) {
         final String currentApiUrl = apiUrl;
         final String currentTargetLanguage = targetLanguage;
@@ -174,13 +167,11 @@ public class TranslatorModClient implements ClientModInitializer {
 
         String cacheKey = buildCacheKey(originalText, currentApiUrl, currentTargetLanguage);
 
-        // キャッシュを確認（すでに翻訳済みの場合は即座に表示）
         if (translationCache.containsKey(cacheKey)) {
             showTranslationResult(translationCache.get(cacheKey), currentTargetLanguage);
             return;
         }
 
-        // バックグラウンドで翻訳を実行
         CompletableFuture.runAsync(() -> {
             try {
                 String encodedText = URLEncoder.encode(originalText, StandardCharsets.UTF_8.toString());
@@ -192,7 +183,6 @@ public class TranslatorModClient implements ClientModInitializer {
                         .timeout(Duration.ofSeconds(10))
                         .build();
 
-                // 1回の通信でリダイレクトを自動処理し、最終的なテキストを取得
                 HttpResponse<String> response = HTTP_CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
                 String translatedText = response.body().trim();
 
@@ -201,10 +191,8 @@ public class TranslatorModClient implements ClientModInitializer {
                     return;
                 }
 
-                // 正常なテキストが返ってきたかどうかの簡易チェック
                 if (!translatedText.isEmpty() && !looksLikeHtmlResponse(translatedText)) {
                     
-                    // キャッシュに保存（メモリ肥大化防止のため2000件でリセット）
                     if (translationCache.size() > 2000) {
                         translationCache.clear();
                     }
@@ -221,22 +209,26 @@ public class TranslatorModClient implements ClientModInitializer {
         });
     }
 
-    // --- 画面表示用のヘルパーメソッド（メインスレッドで実行） ---
-
     private static void showTranslationResult(String translatedText, String language) {
         Minecraft mc = Minecraft.getInstance();
         mc.execute(() -> {
-            if (mc.player != null && mc.player.connection != null) {
-                MutableComponent translationPrefix = Component.translatable("translator.chat.result_prefix", language)
+            var player = mc.player;
+            
+            if (player != null && player.connection != null) {
+                String safeLang = language != null ? language : "ja";
+                String safeText = translatedText != null ? translatedText : "";
+
+                MutableComponent translationPrefix = Component.translatable("translator.chat.result_prefix", safeLang)
                     .withStyle(Style.EMPTY.withBold(true).withColor(0xFF55FF));
-                MutableComponent translationBody = Component.literal(translatedText)
+                MutableComponent translationBody = Component.literal(safeText)
                         .withStyle(Style.EMPTY.withColor(0xAAAAAA).withBold(false).withUnderlined(false));
 
                 MutableComponent translationMsg = Component.empty();
                 translationMsg.append(translationPrefix);
                 translationMsg.append(translationBody);
-                mc.player.displayClientMessage(translationMsg, false);
-                mc.player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.8f, 1.15f);
+
+                player.displayClientMessage(translationMsg, false);
+                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.8f, 1.15f);
             }
         });
     }
@@ -255,6 +247,9 @@ public class TranslatorModClient implements ClientModInitializer {
     }
 
     private static void showErrorMessage(Component message) {
+        if (message == null) {
+            return;
+        }
         Minecraft mc = Minecraft.getInstance();
         mc.execute(() -> {
             if (mc.player != null) {
@@ -262,8 +257,6 @@ public class TranslatorModClient implements ClientModInitializer {
             }
         });
     }
-
-    // --- Getter / Setter ---
 
     public static String getApiUrl() {
         return apiUrl;

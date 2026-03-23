@@ -11,9 +11,6 @@ public class TranslatorSettingsScreen extends Screen {
     private final Screen previousScreen;
     private EditBox apiUrlBox;
     private EditBox languageBox;
-    private Button saveButton;
-    private Button resetButton;
-    private Button backButton;
     private int panelLeft;
     private int panelTop;
     private int panelRight;
@@ -43,7 +40,10 @@ public class TranslatorSettingsScreen extends Screen {
         this.apiUrlBox.setBordered(true);
         this.apiUrlBox.setTextColor(0xFFFFFFFF);
         this.apiUrlBox.setTextColorUneditable(0xFFFFFFFF);
-        this.apiUrlBox.setValue(TranslatorModClient.getApiUrl());
+        
+        // Null安全性の確保（単純な条件分岐を使用）
+        String currentApiUrl = TranslatorModClient.getApiUrl();
+        this.apiUrlBox.setValue(currentApiUrl != null ? currentApiUrl : "");
         this.addRenderableWidget(this.apiUrlBox);
 
         // 言語入力
@@ -53,11 +53,14 @@ public class TranslatorSettingsScreen extends Screen {
         this.languageBox.setBordered(true);
         this.languageBox.setTextColor(0xFFFFFFFF);
         this.languageBox.setTextColorUneditable(0xFFFFFFFF);
-        this.languageBox.setValue(TranslatorModClient.getTargetLanguage());
+        
+        // Null安全性の確保（単純な条件分岐を使用）
+        String currentLang = TranslatorModClient.getTargetLanguage();
+        this.languageBox.setValue(currentLang != null ? currentLang : "ja");
         this.addRenderableWidget(this.languageBox);
 
         // 保存ボタン
-        this.saveButton = this.addRenderableWidget(Button.builder(
+        this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.save"),
                 button -> saveSettings())
             .pos(this.panelLeft + 12, this.panelBottom - 30)
@@ -65,7 +68,7 @@ public class TranslatorSettingsScreen extends Screen {
             .build());
 
         // リセットボタン
-        this.resetButton = this.addRenderableWidget(Button.builder(
+        this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.reset"),
                 button -> resetSettings())
             .pos(this.panelLeft + 110, this.panelBottom - 30)
@@ -73,7 +76,7 @@ public class TranslatorSettingsScreen extends Screen {
             .build());
 
         // 戻るボタン
-        this.backButton = this.addRenderableWidget(Button.builder(
+        this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.cancel"),
                 button -> this.onClose())
             .pos(this.panelRight - 102, this.panelBottom - 30)
@@ -85,10 +88,10 @@ public class TranslatorSettingsScreen extends Screen {
         String apiUrl = this.apiUrlBox.getValue();
         String language = this.languageBox.getValue();
 
-        if (!apiUrl.isEmpty()) {
+        if (apiUrl != null && !apiUrl.isEmpty()) {
             TranslatorModClient.setApiUrl(apiUrl);
         }
-        if (!language.isEmpty()) {
+        if (language != null && !language.isEmpty()) {
             TranslatorModClient.setTargetLanguage(language);
         }
 
@@ -102,11 +105,14 @@ public class TranslatorSettingsScreen extends Screen {
     }
 
     private void resetSettings() {
-        this.apiUrlBox.setValue("https://script.google.com/macros/.../exec");
-        this.languageBox.setValue("ja");
+        String defaultUrl = "https://script.google.com/macros/.../exec";
+        String defaultLang = "ja";
+        
+        this.apiUrlBox.setValue(defaultUrl);
+        this.languageBox.setValue(defaultLang);
 
-        TranslatorModClient.setApiUrl("https://script.google.com/macros/.../exec");
-        TranslatorModClient.setTargetLanguage("ja");
+        TranslatorModClient.setApiUrl(defaultUrl);
+        TranslatorModClient.setTargetLanguage(defaultLang);
 
         if (this.minecraft != null && this.minecraft.player != null) {
             this.minecraft.player.displayClientMessage(
@@ -118,6 +124,7 @@ public class TranslatorSettingsScreen extends Screen {
     }
 
     @Override
+    @SuppressWarnings("null")
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         graphics.fill(0, 0, this.width, this.height, 0xB0000000);
         graphics.fill(this.panelLeft - 1, this.panelTop - 1, this.panelRight + 1, this.panelBottom + 1, 0xFF4A4F5A);
@@ -133,7 +140,9 @@ public class TranslatorSettingsScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(this.previousScreen);
+        if (this.minecraft != null) {
+            this.minecraft.setScreen(this.previousScreen);
+        }
     }
 
     @Override
