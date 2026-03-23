@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "เปิดการตั้งค่าม็อดแปลภาษา",
+  "category.translator": "ม็อดแปลภาษา",
+  "translator.chat.translate_button.label": "แปล",
+  "translator.chat.translate_button.hover": "คลิกเพื่อแปล",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cข้อผิดพลาดการแปล: ยังไม่ได้ตั้งค่า API",
+  "translator.error.http_status": "§cข้อผิดพลาดการแปล: สถานะ API %s",
+  "translator.error.html_response": "§cข้อผิดพลาดการแปล: API ส่งกลับเป็น HTML โปรดตรวจสอบ URL/สิทธิ์/การตั้งค่า GAS",
+  "translator.error.request": "§cข้อผิดพลาดการแปล: %s",
+  "screen.translator.settings.title": "การตั้งค่า MOD แปลภาษา",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "ภาษาเป้าหมาย",
+  "screen.translator.settings.target_language_hint": "ภาษาเป้าหมาย (เช่น ไทย (th) / อังกฤษ (en) / จีน (zh))",
+  "screen.translator.settings.save": "บันทึก",
+  "screen.translator.settings.reset": "รีเซ็ต",
+  "screen.translator.settings.cancel": "ยกเลิก",
+  "screen.translator.settings.saved": "บันทึกการตั้งค่าการแปลแล้ว",
+  "screen.translator.settings.reset_done": "รีเซ็ตการตั้งค่าการแปลแล้ว"
+}

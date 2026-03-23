@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Mở cài đặt mod dịch",
+  "category.translator": "Mod dịch",
+  "translator.chat.translate_button.label": "D",
+  "translator.chat.translate_button.hover": "Nhấn để dịch",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cLỗi dịch: API chưa được cấu hình.",
+  "translator.error.http_status": "§cLỗi dịch: mã trạng thái API %s",
+  "translator.error.html_response": "§cLỗi dịch: API trả về HTML. Kiểm tra URL/quyền/cài đặt GAS.",
+  "translator.error.request": "§cLỗi dịch: %s",
+  "screen.translator.settings.title": "Cài đặt MOD Dịch",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Ngôn ngữ đích",
+  "screen.translator.settings.target_language_hint": "Ngôn ngữ đích (ví dụ: tiếng Việt (vi) / tiếng Anh (en) / tiếng Trung (zh))",
+  "screen.translator.settings.save": "Lưu",
+  "screen.translator.settings.reset": "Đặt lại",
+  "screen.translator.settings.cancel": "Hủy",
+  "screen.translator.settings.saved": "Đã lưu cài đặt dịch",
+  "screen.translator.settings.reset_done": "Đã đặt lại cài đặt dịch"
+}

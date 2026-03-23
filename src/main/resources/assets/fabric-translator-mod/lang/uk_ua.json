@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Відкрити налаштування мода перекладу",
+  "category.translator": "Мод перекладу",
+  "translator.chat.translate_button.label": "П",
+  "translator.chat.translate_button.hover": "Натисніть, щоб перекласти",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cПомилка перекладу: API не налаштовано.",
+  "translator.error.http_status": "§cПомилка перекладу: код відповіді API %s",
+  "translator.error.html_response": "§cПомилка перекладу: API повернув HTML. Перевірте URL/дозволи/налаштування GAS.",
+  "translator.error.request": "§cПомилка перекладу: %s",
+  "screen.translator.settings.title": "Налаштування MOD перекладу",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Цільова мова",
+  "screen.translator.settings.target_language_hint": "Цільова мова (наприклад: українська (uk) / англійська (en) / польська (pl))",
+  "screen.translator.settings.save": "Зберегти",
+  "screen.translator.settings.reset": "Скинути",
+  "screen.translator.settings.cancel": "Скасувати",
+  "screen.translator.settings.saved": "Налаштування перекладу збережено",
+  "screen.translator.settings.reset_done": "Налаштування перекладу скинуто"
+}

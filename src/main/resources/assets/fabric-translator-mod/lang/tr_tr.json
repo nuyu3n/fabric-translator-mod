@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Çeviri mod ayarlarını aç",
+  "category.translator": "Çeviri modu",
+  "translator.chat.translate_button.label": "Ç",
+  "translator.chat.translate_button.hover": "Çevirmek için tıkla",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cÇeviri hatası: API yapılandırılmamış.",
+  "translator.error.http_status": "§cÇeviri hatası: API durum kodu %s",
+  "translator.error.html_response": "§cÇeviri hatası: API HTML döndürdü. URL/izinler/GAS ayarlarını kontrol et.",
+  "translator.error.request": "§cÇeviri hatası: %s",
+  "screen.translator.settings.title": "Çeviri MOD Ayarları",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Hedef dil",
+  "screen.translator.settings.target_language_hint": "Hedef dil (örn. Türkçe (tr) / İngilizce (en) / Almanca (de))",
+  "screen.translator.settings.save": "Kaydet",
+  "screen.translator.settings.reset": "Sıfırla",
+  "screen.translator.settings.cancel": "İptal",
+  "screen.translator.settings.saved": "Çeviri ayarları kaydedildi",
+  "screen.translator.settings.reset_done": "Çeviri ayarları sıfırlandı"
+}

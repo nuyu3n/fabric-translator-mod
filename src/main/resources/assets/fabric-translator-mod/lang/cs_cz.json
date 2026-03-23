@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Otevřít nastavení překladače",
+  "category.translator": "Překladač mod",
+  "translator.chat.translate_button.label": "P",
+  "translator.chat.translate_button.hover": "Klikni pro překlad",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cChyba překladu: API není nastaveno.",
+  "translator.error.http_status": "§cChyba překladu: stavový kód API %s",
+  "translator.error.html_response": "§cChyba překladu: API vrátilo HTML. Zkontroluj URL/oprávnění/nastavení GAS.",
+  "translator.error.request": "§cChyba překladu: %s",
+  "screen.translator.settings.title": "Nastavení MODu překladače",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Cílový jazyk",
+  "screen.translator.settings.target_language_hint": "Cílový jazyk (např. čeština (cs) / angličtina (en) / němčina (de))",
+  "screen.translator.settings.save": "Uložit",
+  "screen.translator.settings.reset": "Obnovit",
+  "screen.translator.settings.cancel": "Zrušit",
+  "screen.translator.settings.saved": "Nastavení překladu uloženo",
+  "screen.translator.settings.reset_done": "Nastavení překladu obnoveno"
+}

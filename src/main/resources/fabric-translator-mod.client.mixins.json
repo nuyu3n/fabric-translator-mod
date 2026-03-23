@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.nuyuchi.translator.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ChatComponentMixin",
+    "ScreenClickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Άνοιγμα ρυθμίσεων μεταφραστή",
+  "category.translator": "Mod Μεταφραστή",
+  "translator.chat.translate_button.label": "Μ",
+  "translator.chat.translate_button.hover": "Κάνε κλικ για μετάφραση",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cΣφάλμα μετάφρασης: το API δεν έχει ρυθμιστεί.",
+  "translator.error.http_status": "§cΣφάλμα μετάφρασης: κωδικός κατάστασης API %s",
+  "translator.error.html_response": "§cΣφάλμα μετάφρασης: το API επέστρεψε HTML. Έλεγξε URL/δικαιώματα/ρυθμίσεις GAS.",
+  "translator.error.request": "§cΣφάλμα μετάφρασης: %s",
+  "screen.translator.settings.title": "Ρυθμίσεις MOD Μεταφραστή",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Γλώσσα προορισμού",
+  "screen.translator.settings.target_language_hint": "Γλώσσα προορισμού (π.χ. ελληνικά (el) / αγγλικά (en) / τουρκικά (tr))",
+  "screen.translator.settings.save": "Αποθήκευση",
+  "screen.translator.settings.reset": "Επαναφορά",
+  "screen.translator.settings.cancel": "Ακύρωση",
+  "screen.translator.settings.saved": "Οι ρυθμίσεις μετάφρασης αποθηκεύτηκαν",
+  "screen.translator.settings.reset_done": "Οι ρυθμίσεις μετάφρασης επαναφέρθηκαν"
+}

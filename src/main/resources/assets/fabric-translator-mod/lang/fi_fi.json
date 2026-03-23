@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Avaa käännösmodin asetukset",
+  "category.translator": "Käännösmodi",
+  "translator.chat.translate_button.label": "K",
+  "translator.chat.translate_button.hover": "Käännä napsauttamalla",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cKäännösvirhe: API:ta ei ole määritetty.",
+  "translator.error.http_status": "§cKäännösvirhe: API:n tilakoodi %s",
+  "translator.error.html_response": "§cKäännösvirhe: API palautti HTML:ää. Tarkista URL/oikeudet/GAS-asetukset.",
+  "translator.error.request": "§cKäännösvirhe: %s",
+  "screen.translator.settings.title": "Käännös-MODin asetukset",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Kohdekieli",
+  "screen.translator.settings.target_language_hint": "Kohdekieli (esim. suomi (fi) / englanti (en) / ruotsi (sv))",
+  "screen.translator.settings.save": "Tallenna",
+  "screen.translator.settings.reset": "Nollaa",
+  "screen.translator.settings.cancel": "Peruuta",
+  "screen.translator.settings.saved": "Käännösasetukset tallennettu",
+  "screen.translator.settings.reset_done": "Käännösasetukset nollattu"
+}

@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Buka pengaturan mod penerjemah",
+  "category.translator": "Mod penerjemah",
+  "translator.chat.translate_button.label": "T",
+  "translator.chat.translate_button.hover": "Klik untuk menerjemahkan",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cKesalahan terjemahan: API belum dikonfigurasi.",
+  "translator.error.http_status": "§cKesalahan terjemahan: kode status API %s",
+  "translator.error.html_response": "§cKesalahan terjemahan: API mengembalikan HTML. Periksa URL/izin/pengaturan GAS.",
+  "translator.error.request": "§cKesalahan terjemahan: %s",
+  "screen.translator.settings.title": "Pengaturan MOD Penerjemah",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Bahasa tujuan",
+  "screen.translator.settings.target_language_hint": "Bahasa tujuan (mis. Indonesia (id) / Inggris (en) / Melayu (ms))",
+  "screen.translator.settings.save": "Simpan",
+  "screen.translator.settings.reset": "Atur ulang",
+  "screen.translator.settings.cancel": "Batal",
+  "screen.translator.settings.saved": "Pengaturan terjemahan disimpan",
+  "screen.translator.settings.reset_done": "Pengaturan terjemahan diatur ulang"
+}

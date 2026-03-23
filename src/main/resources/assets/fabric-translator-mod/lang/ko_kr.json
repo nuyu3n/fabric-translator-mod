@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "번역 모드 설정 열기",
+  "category.translator": "번역 모드",
+  "translator.chat.translate_button.label": "번",
+  "translator.chat.translate_button.hover": "클릭하여 번역",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§c번역 오류: API가 설정되지 않았습니다.",
+  "translator.error.http_status": "§c번역 오류: API 응답 코드 %s",
+  "translator.error.html_response": "§c번역 오류: API가 HTML을 반환했습니다. URL/권한/GAS 설정을 확인하세요.",
+  "translator.error.request": "§c번역 오류: %s",
+  "screen.translator.settings.title": "번역 모드 설정",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "대상 언어",
+  "screen.translator.settings.target_language_hint": "대상 언어 (예: 한국어 (ko) / 영어 (en) / 일본어 (ja))",
+  "screen.translator.settings.save": "저장",
+  "screen.translator.settings.reset": "초기화",
+  "screen.translator.settings.cancel": "취소",
+  "screen.translator.settings.saved": "번역 설정을 저장했습니다",
+  "screen.translator.settings.reset_done": "번역 설정을 초기화했습니다"
+}

@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "打开翻译模组设置",
+  "category.translator": "翻译模组",
+  "translator.chat.translate_button.label": "译",
+  "translator.chat.translate_button.hover": "点击翻译",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§c翻译错误：API 未配置。",
+  "translator.error.http_status": "§c翻译错误：API 状态码 %s",
+  "translator.error.html_response": "§c翻译错误：API 返回了 HTML。请检查 URL/权限/GAS 设置。",
+  "translator.error.request": "§c翻译错误：%s",
+  "screen.translator.settings.title": "翻译 MOD 设置",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "目标语言",
+  "screen.translator.settings.target_language_hint": "目标语言（例如：中文 (zh) / 英语 (en) / 日语 (ja)）",
+  "screen.translator.settings.save": "保存",
+  "screen.translator.settings.reset": "重置",
+  "screen.translator.settings.cancel": "取消",
+  "screen.translator.settings.saved": "翻译设置已保存",
+  "screen.translator.settings.reset_done": "翻译设置已重置"
+}

@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Apri impostazioni del mod traduttore",
+  "category.translator": "Mod traduttore",
+  "translator.chat.translate_button.label": "T",
+  "translator.chat.translate_button.hover": "Clicca per tradurre",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cErrore di traduzione: API non configurata.",
+  "translator.error.http_status": "§cErrore di traduzione: codice stato API %s",
+  "translator.error.html_response": "§cErrore di traduzione: l'API ha restituito HTML. Controlla URL/permessi/impostazioni GAS.",
+  "translator.error.request": "§cErrore di traduzione: %s",
+  "screen.translator.settings.title": "Impostazioni MOD Traduttore",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Lingua di destinazione",
+  "screen.translator.settings.target_language_hint": "Lingua di destinazione (es. italiano (it) / inglese (en) / francese (fr))",
+  "screen.translator.settings.save": "Salva",
+  "screen.translator.settings.reset": "Reimposta",
+  "screen.translator.settings.cancel": "Annulla",
+  "screen.translator.settings.saved": "Impostazioni di traduzione salvate",
+  "screen.translator.settings.reset_done": "Impostazioni di traduzione ripristinate"
+}

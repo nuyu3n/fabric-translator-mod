@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "翻訳MOD設定を開く",
+  "category.translator": "翻訳MOD",
+  "translator.chat.translate_button.label": "翻",
+  "translator.chat.translate_button.hover": "クリックして翻訳",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§c翻訳エラー: APIが未設定です。",
+  "translator.error.http_status": "§c翻訳エラー: API応答コード %s",
+  "translator.error.html_response": "§c翻訳エラー: APIがHTMLを返しました。URL/権限/GAS設定を確認してください。",
+  "translator.error.request": "§c翻訳エラー: %s",
+  "screen.translator.settings.title": "翻訳MOD 設定",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "対象言語",
+  "screen.translator.settings.target_language_hint": "対象言語 (例: 日本語 (ja) / 英語 (en) / 中国語 (zh))",
+  "screen.translator.settings.save": "保存",
+  "screen.translator.settings.reset": "リセット",
+  "screen.translator.settings.cancel": "キャンセル",
+  "screen.translator.settings.saved": "翻訳設定を保存しました",
+  "screen.translator.settings.reset_done": "翻訳設定をリセットしました"
+}

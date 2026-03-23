@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Открыть настройки мода перевода",
+  "category.translator": "Мод перевода",
+  "translator.chat.translate_button.label": "П",
+  "translator.chat.translate_button.hover": "Нажмите, чтобы перевести",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cОшибка перевода: API не настроен.",
+  "translator.error.http_status": "§cОшибка перевода: код ответа API %s",
+  "translator.error.html_response": "§cОшибка перевода: API вернул HTML. Проверьте URL/права/настройки GAS.",
+  "translator.error.request": "§cОшибка перевода: %s",
+  "screen.translator.settings.title": "Настройки мода перевода",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Целевой язык",
+  "screen.translator.settings.target_language_hint": "Целевой язык (например: русский (ru) / английский (en) / украинский (uk))",
+  "screen.translator.settings.save": "Сохранить",
+  "screen.translator.settings.reset": "Сбросить",
+  "screen.translator.settings.cancel": "Отмена",
+  "screen.translator.settings.saved": "Настройки перевода сохранены",
+  "screen.translator.settings.reset_done": "Настройки перевода сброшены"
+}

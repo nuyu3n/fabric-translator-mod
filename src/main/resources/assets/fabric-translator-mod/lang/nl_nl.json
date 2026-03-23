@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Translator-instellingen openen",
+  "category.translator": "Translator Mod",
+  "translator.chat.translate_button.label": "Ver",
+  "translator.chat.translate_button.hover": "Klik om te vertalen",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cVertaalfout: API is niet ingesteld.",
+  "translator.error.http_status": "§cVertaalfout: API-statuscode %s",
+  "translator.error.html_response": "§cVertaalfout: API gaf HTML terug. Controleer URL/rechten/GAS-instellingen.",
+  "translator.error.request": "§cVertaalfout: %s",
+  "screen.translator.settings.title": "Translator MOD-instellingen",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Doeltaal",
+  "screen.translator.settings.target_language_hint": "Doeltaal (bijv. Nederlands (nl) / Engels (en) / Duits (de))",
+  "screen.translator.settings.save": "Opslaan",
+  "screen.translator.settings.reset": "Resetten",
+  "screen.translator.settings.cancel": "Annuleren",
+  "screen.translator.settings.saved": "Vertaalinstellingen opgeslagen",
+  "screen.translator.settings.reset_done": "Vertaalinstellingen gereset"
+}

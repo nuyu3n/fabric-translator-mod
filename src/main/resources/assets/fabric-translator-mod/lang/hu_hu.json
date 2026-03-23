@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Fordítómod beállításainak megnyitása",
+  "category.translator": "Fordítómod",
+  "translator.chat.translate_button.label": "F",
+  "translator.chat.translate_button.hover": "Kattints a fordításhoz",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cFordítási hiba: az API nincs beállítva.",
+  "translator.error.http_status": "§cFordítási hiba: API állapotkód %s",
+  "translator.error.html_response": "§cFordítási hiba: az API HTML-t adott vissza. Ellenőrizd az URL-t/jogosultságot/GAS-beállításokat.",
+  "translator.error.request": "§cFordítási hiba: %s",
+  "screen.translator.settings.title": "Fordító MOD beállításai",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Célnyelv",
+  "screen.translator.settings.target_language_hint": "Célnyelv (pl. magyar (hu) / angol (en) / német (de))",
+  "screen.translator.settings.save": "Mentés",
+  "screen.translator.settings.reset": "Visszaállítás",
+  "screen.translator.settings.cancel": "Mégse",
+  "screen.translator.settings.saved": "A fordítási beállítások mentve",
+  "screen.translator.settings.reset_done": "A fordítási beállítások visszaállítva"
+}

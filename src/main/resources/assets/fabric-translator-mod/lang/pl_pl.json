@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Otwórz ustawienia moda tłumaczenia",
+  "category.translator": "Mod tłumaczenia",
+  "translator.chat.translate_button.label": "T",
+  "translator.chat.translate_button.hover": "Kliknij, aby przetłumaczyć",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cBłąd tłumaczenia: API nie jest skonfigurowane.",
+  "translator.error.http_status": "§cBłąd tłumaczenia: kod odpowiedzi API %s",
+  "translator.error.html_response": "§cBłąd tłumaczenia: API zwróciło HTML. Sprawdź URL/uprawnienia/ustawienia GAS.",
+  "translator.error.request": "§cBłąd tłumaczenia: %s",
+  "screen.translator.settings.title": "Ustawienia MODA tłumaczenia",
+  "screen.translator.settings.api_url": "URL API",
+  "screen.translator.settings.target_language": "Język docelowy",
+  "screen.translator.settings.target_language_hint": "Język docelowy (np. polski (pl) / angielski (en) / niemiecki (de))",
+  "screen.translator.settings.save": "Zapisz",
+  "screen.translator.settings.reset": "Resetuj",
+  "screen.translator.settings.cancel": "Anuluj",
+  "screen.translator.settings.saved": "Ustawienia tłumaczenia zapisane",
+  "screen.translator.settings.reset_done": "Ustawienia tłumaczenia zresetowane"
+}

@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "अनुवाद मॉड सेटिंग खोलें",
+  "category.translator": "अनुवाद मॉड",
+  "translator.chat.translate_button.label": "अ",
+  "translator.chat.translate_button.hover": "अनुवाद करने के लिए क्लिक करें",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cअनुवाद त्रुटि: API कॉन्फ़िगर नहीं है।",
+  "translator.error.http_status": "§cअनुवाद त्रुटि: API स्थिति कोड %s",
+  "translator.error.html_response": "§cअनुवाद त्रुटि: API ने HTML लौटाया। URL/अनुमति/GAS सेटिंग जांचें।",
+  "translator.error.request": "§cअनुवाद त्रुटि: %s",
+  "screen.translator.settings.title": "अनुवाद MOD सेटिंग",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "लक्ष्य भाषा",
+  "screen.translator.settings.target_language_hint": "लक्ष्य भाषा (जैसे: हिंदी (hi) / अंग्रेज़ी (en) / तमिल (ta))",
+  "screen.translator.settings.save": "सहेजें",
+  "screen.translator.settings.reset": "रीसेट",
+  "screen.translator.settings.cancel": "रद्द करें",
+  "screen.translator.settings.saved": "अनुवाद सेटिंग सहेजी गई",
+  "screen.translator.settings.reset_done": "अनुवाद सेटिंग रीसेट की गई"
+}

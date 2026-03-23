@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "فتح إعدادات مود الترجمة",
+  "category.translator": "مود الترجمة",
+  "translator.chat.translate_button.label": "ت",
+  "translator.chat.translate_button.hover": "انقر للترجمة",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cخطأ في الترجمة: لم يتم إعداد API.",
+  "translator.error.http_status": "§cخطأ في الترجمة: رمز حالة API %s",
+  "translator.error.html_response": "§cخطأ في الترجمة: أعاد API استجابة HTML. تحقق من الرابط/الصلاحيات/إعدادات GAS.",
+  "translator.error.request": "§cخطأ في الترجمة: %s",
+  "screen.translator.settings.title": "إعدادات مود الترجمة",
+  "screen.translator.settings.api_url": "رابط API",
+  "screen.translator.settings.target_language": "اللغة المستهدفة",
+  "screen.translator.settings.target_language_hint": "اللغة المستهدفة (مثال: العربية (ar) / الإنجليزية (en) / الفرنسية (fr))",
+  "screen.translator.settings.save": "حفظ",
+  "screen.translator.settings.reset": "إعادة تعيين",
+  "screen.translator.settings.cancel": "إلغاء",
+  "screen.translator.settings.saved": "تم حفظ إعدادات الترجمة",
+  "screen.translator.settings.reset_done": "تمت إعادة تعيين إعدادات الترجمة"
+}

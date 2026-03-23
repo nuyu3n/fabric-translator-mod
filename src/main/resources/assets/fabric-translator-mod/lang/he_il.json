@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "פתיחת הגדרות מוד התרגום",
+  "category.translator": "מוד תרגום",
+  "translator.chat.translate_button.label": "ת",
+  "translator.chat.translate_button.hover": "לחץ כדי לתרגם",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cשגיאת תרגום: ה-API לא מוגדר.",
+  "translator.error.http_status": "§cשגיאת תרגום: קוד מצב API %s",
+  "translator.error.html_response": "§cשגיאת תרגום: ה-API החזיר HTML. בדוק URL/הרשאות/הגדרות GAS.",
+  "translator.error.request": "§cשגיאת תרגום: %s",
+  "screen.translator.settings.title": "הגדרות מוד התרגום",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "שפת יעד",
+  "screen.translator.settings.target_language_hint": "שפת יעד (למשל: עברית (he) / אנגלית (en) / ערבית (ar))",
+  "screen.translator.settings.save": "שמור",
+  "screen.translator.settings.reset": "איפוס",
+  "screen.translator.settings.cancel": "ביטול",
+  "screen.translator.settings.saved": "הגדרות התרגום נשמרו",
+  "screen.translator.settings.reset_done": "הגדרות התרגום אופסו"
+}

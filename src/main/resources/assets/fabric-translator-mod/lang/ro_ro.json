@@ -1,0 +1,20 @@
+{
+  "key.translator.settings": "Deschide setările modului de traducere",
+  "category.translator": "Mod Traducător",
+  "translator.chat.translate_button.label": "Tr",
+  "translator.chat.translate_button.hover": "Click pentru a traduce",
+  "translator.chat.result_prefix": "【%s】 ",
+  "translator.error.api_not_configured": "§cEroare de traducere: API-ul nu este configurat.",
+  "translator.error.http_status": "§cEroare de traducere: cod de stare API %s",
+  "translator.error.html_response": "§cEroare de traducere: API-ul a returnat HTML. Verifică URL/permisiuni/setările GAS.",
+  "translator.error.request": "§cEroare de traducere: %s",
+  "screen.translator.settings.title": "Setări MOD Traducător",
+  "screen.translator.settings.api_url": "API URL",
+  "screen.translator.settings.target_language": "Limba țintă",
+  "screen.translator.settings.target_language_hint": "Limba țintă (ex.: română (ro) / engleză (en) / maghiară (hu))",
+  "screen.translator.settings.save": "Salvează",
+  "screen.translator.settings.reset": "Resetează",
+  "screen.translator.settings.cancel": "Anulează",
+  "screen.translator.settings.saved": "Setările de traducere au fost salvate",
+  "screen.translator.settings.reset_done": "Setările de traducere au fost resetate"
+}
