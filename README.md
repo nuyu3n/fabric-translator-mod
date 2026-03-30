@@ -1,3 +1,7 @@
+English readme is >>> https://modrinth.com/mod/translation-mod
+
+***
+
 # Translator Mod
 Minecraftのチャットをワンクリックで指定の言語に翻訳するMODです。GASのAPI経由で翻訳します。Fabric環境、Minecraft Version 1.12.11で動作します。
 
