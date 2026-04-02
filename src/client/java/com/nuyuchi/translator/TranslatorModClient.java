@@ -89,13 +89,17 @@ public class TranslatorModClient implements ClientModInitializer {
         }
 
         String marker = "/" + TRANSLATE_MARKER_PREFIX + messageId + TRANSLATE_MARKER_SUFFIX;
+        String previewText = buildPreviewText(plainText);
+        MutableComponent hoverText = Component.empty()
+            .append(Component.translatable("translator.chat.translate_button.hover"))
+            .append(Component.literal("\u3000:" + previewText));
 
         MutableComponent prefix = Component.translatable("translator.chat.translate_button.label")
                 .withStyle(Style.EMPTY
             .withColor(0x777777)
                 .withBold(true)
                         .withClickEvent(new ClickEvent.RunCommand(marker))
-                .withHoverEvent(new HoverEvent.ShowText(Component.translatable("translator.chat.translate_button.hover"))));
+            .withHoverEvent(new HoverEvent.ShowText(hoverText)));
 
         MutableComponent prefixSpace = Component.literal(" ")
             .withStyle(Style.EMPTY.withColor(0x777777).withUnderlined(false));
@@ -165,6 +169,8 @@ public class TranslatorModClient implements ClientModInitializer {
             return;
         }
 
+        playTranslateStartSound();
+
         String cacheKey = buildCacheKey(originalText, currentApiUrl, currentTargetLanguage);
 
         if (translationCache.containsKey(cacheKey)) {
@@ -209,6 +215,16 @@ public class TranslatorModClient implements ClientModInitializer {
         });
     }
 
+    private static void playTranslateStartSound() {
+        Minecraft mc = Minecraft.getInstance();
+        mc.execute(() -> {
+            var player = mc.player;
+            if (player != null) {
+                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.6f, 0.9f);
+            }
+        });
+    }
+
     private static void showTranslationResult(String translatedText, String language) {
         Minecraft mc = Minecraft.getInstance();
         mc.execute(() -> {
@@ -235,6 +251,21 @@ public class TranslatorModClient implements ClientModInitializer {
 
     private static String buildCacheKey(String originalText, String currentApiUrl, String currentTargetLanguage) {
         return currentApiUrl + "||" + currentTargetLanguage + "||" + originalText;
+    }
+
+    private static String buildPreviewText(String text) {
+        if (text == null || text.isBlank()) {
+            return "...";
+        }
+
+        String normalized = text.trim();
+        int codePointCount = normalized.codePointCount(0, normalized.length());
+        if (codePointCount <= 20) {
+            return normalized;
+        }
+
+        int endIndex = normalized.offsetByCodePoints(0, 20);
+        return normalized.substring(0, endIndex) + "...";
     }
 
     private static boolean looksLikeHtmlResponse(String responseText) {
