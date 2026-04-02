@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "fabric-translator-mod",
+    "id": "chat-translator-mod",
     "version": "${version}",
     "name": "Translator Mod",
     "description": "A simple mod to translate text in Fabric!",
@@ -12,7 +12,7 @@
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
     "license": "Apache-2.0",
-    "icon": "assets/fabric-translator-mod/icon.png", 
+    "icon": "assets/chat-translator-mod/icon.png", 
     "environment": "*",
     "entrypoints": {
         "main": [
@@ -26,9 +26,9 @@
         ]
     },
     "mixins": [
-        "fabric-translator-mod.mixins.json",
+        "chat-translator-mod.mixins.json",
         {
-            "config": "fabric-translator-mod.client.mixins.json",
+            "config": "chat-translator-mod.client.mixins.json",
             "environment": "client"
         }
     ],
