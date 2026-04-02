@@ -2,8 +2,8 @@
     "schemaVersion": 1,
     "id": "chat-translator-mod",
     "version": "${version}",
-    "name": "Translator Mod",
-    "description": "A simple mod to translate text in Fabric!",
+    "name": "Chat Translator Mod",
+    "description": "A simple mod to translate text using Google Translate!",
     "authors": [
         "Nuyuchi"
     ],
