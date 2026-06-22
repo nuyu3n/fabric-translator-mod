@@ -9,8 +9,6 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ChatComponent.class)
 public class ChatComponentMixin {
-
-    // 26.2で分裂した3つのメソッドすべてを対象に指定します
     @ModifyVariable(
         method = {"addClientSystemMessage", "addServerSystemMessage", "addPlayerMessage"}, 
         at = @At("HEAD"), 
