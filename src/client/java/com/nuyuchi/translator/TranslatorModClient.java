@@ -1,17 +1,5 @@
 package com.nuyuchi.translator;
 
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.GuiMessageTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.ClickEvent;
-import net.minecraft.network.chat.HoverEvent;
-import net.minecraft.network.chat.MessageSignature;
-import net.minecraft.sounds.SoundEvents;
-
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
@@ -20,11 +8,22 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.time.Duration;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.HoverEvent;
+import net.minecraft.network.chat.MessageSignature;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.sounds.SoundEvents;
 
 public class TranslatorModClient implements ClientModInitializer {
 
@@ -72,13 +71,13 @@ public class TranslatorModClient implements ClientModInitializer {
         }
     }
 
-    public static Component withTranslatePrefix(Component original, MessageSignature signature, GuiMessageTag tag) {
+    public static Component withTranslatePrefix(Component original, MessageSignature signature) {
         if (original == null) {
             return Component.empty();
         }
 
         String plainText = original.getString();
-        if (!shouldAttachTranslateButton(plainText, signature, tag)) {
+        if (!shouldAttachTranslateButton(plainText)) {
             return original;
         }
 
@@ -111,7 +110,7 @@ public class TranslatorModClient implements ClientModInitializer {
         return container;
     }
 
-    private static boolean shouldAttachTranslateButton(String plainText, MessageSignature signature, GuiMessageTag tag) {
+    private static boolean shouldAttachTranslateButton(String plainText) {
         if (plainText == null || plainText.isBlank()) {
             return false;
         }
@@ -122,13 +121,9 @@ public class TranslatorModClient implements ClientModInitializer {
             return false;
         }
 
-        if (normalized.startsWith(Component.translatable("translator.chat.translate_button.label").getString())
+        return !(normalized.startsWith(Component.translatable("translator.chat.translate_button.label").getString())
             || normalized.startsWith("翻 ")
-            || normalized.startsWith("【")) {
-            return false;
-        }
-
-        return true;
+            || normalized.startsWith("【"));
     }
 
     public static boolean handleTranslateMarker(String markerCommand) {
@@ -243,7 +238,7 @@ public class TranslatorModClient implements ClientModInitializer {
                 translationMsg.append(translationPrefix);
                 translationMsg.append(translationBody);
 
-                player.displayClientMessage(translationMsg, false);
+                player.sendSystemMessage(translationMsg);
                 player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.8f, 1.15f);
             }
         });
@@ -284,7 +279,7 @@ public class TranslatorModClient implements ClientModInitializer {
         Minecraft mc = Minecraft.getInstance();
         mc.execute(() -> {
             if (mc.player != null) {
-                mc.player.displayClientMessage(message, false);
+                mc.player.sendSystemMessage(message);
             }
         });
     }

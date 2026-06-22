@@ -1,10 +1,10 @@
 package com.nuyuchi.translator.client.gui;
 
 import com.nuyuchi.translator.TranslatorModClient;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.Screen;
+
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
 public class TranslatorSettingsScreen extends Screen {
@@ -33,7 +33,6 @@ public class TranslatorSettingsScreen extends Screen {
         int fieldWidth = panelWidth - 24;
         int fieldX = this.panelLeft + 12;
 
-        // API URL入力
         this.apiUrlBox = new EditBox(this.font, fieldX, this.panelTop + 38, fieldWidth, 20,
             Component.translatable("screen.translator.settings.api_url"));
         this.apiUrlBox.setMaxLength(4096);
@@ -41,7 +40,6 @@ public class TranslatorSettingsScreen extends Screen {
         this.apiUrlBox.setTextColor(0xFFFFFFFF);
         this.apiUrlBox.setTextColorUneditable(0xFFFFFFFF);
         
-        // Null安全性の確保（単純な条件分岐を使用）
         String currentApiUrl = TranslatorModClient.getApiUrl();
         this.apiUrlBox.setValue(currentApiUrl != null ? currentApiUrl : "");
         this.addRenderableWidget(this.apiUrlBox);
@@ -54,12 +52,10 @@ public class TranslatorSettingsScreen extends Screen {
         this.languageBox.setTextColor(0xFFFFFFFF);
         this.languageBox.setTextColorUneditable(0xFFFFFFFF);
         
-        // Null安全性の確保（単純な条件分岐を使用）
         String currentLang = TranslatorModClient.getTargetLanguage();
         this.languageBox.setValue(currentLang != null ? currentLang : "ja");
         this.addRenderableWidget(this.languageBox);
 
-        // 保存ボタン
         this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.save"),
                 button -> saveSettings())
@@ -67,7 +63,6 @@ public class TranslatorSettingsScreen extends Screen {
             .size(90, 20)
             .build());
 
-        // リセットボタン
         this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.reset"),
                 button -> resetSettings())
@@ -75,13 +70,22 @@ public class TranslatorSettingsScreen extends Screen {
             .size(90, 20)
             .build());
 
-        // 戻るボタン
         this.addRenderableWidget(Button.builder(
             Component.translatable("screen.translator.settings.cancel"),
                 button -> this.onClose())
             .pos(this.panelRight - 102, this.panelBottom - 30)
             .size(90, 20)
             .build());
+    }
+
+    @Override
+    public void extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor guiGraphicsExtractor, int mouseX, int mouseY, float partialTick) {
+        super.extractRenderState(guiGraphicsExtractor, mouseX, mouseY, partialTick);
+
+        guiGraphicsExtractor.centeredText(this.font, this.title.getString(), this.width / 2, this.panelTop + 12, 0xFFFFFFFF);
+
+        guiGraphicsExtractor.text(this.font, Component.translatable("screen.translator.settings.api_url").getString(), this.panelLeft + 12, this.panelTop + 26, 0xFFA0A0A0);
+        guiGraphicsExtractor.text(this.font, Component.translatable("screen.translator.settings.target_language").getString(), this.panelLeft + 12, this.panelTop + 76, 0xFFA0A0A0);
     }
 
     private void saveSettings() {
@@ -96,9 +100,8 @@ public class TranslatorSettingsScreen extends Screen {
         }
 
         if (this.minecraft != null && this.minecraft.player != null) {
-            this.minecraft.player.displayClientMessage(
-                Component.translatable("screen.translator.settings.saved"),
-                false);
+            this.minecraft.player.sendSystemMessage(
+                Component.translatable("screen.translator.settings.saved"));
         }
 
         this.onClose();
@@ -115,34 +118,16 @@ public class TranslatorSettingsScreen extends Screen {
         TranslatorModClient.setTargetLanguage(defaultLang);
 
         if (this.minecraft != null && this.minecraft.player != null) {
-            this.minecraft.player.displayClientMessage(
-                Component.translatable("screen.translator.settings.reset_done"),
-                false);
+            this.minecraft.player.sendSystemMessage(
+                Component.translatable("screen.translator.settings.reset_done"));
         }
 
         this.onClose();
     }
 
     @Override
-    @SuppressWarnings("null")
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        graphics.fill(0, 0, this.width, this.height, 0xB0000000);
-        graphics.fill(this.panelLeft - 1, this.panelTop - 1, this.panelRight + 1, this.panelBottom + 1, 0xFF4A4F5A);
-        graphics.fill(this.panelLeft, this.panelTop, this.panelRight, this.panelBottom, 0xF014171D);
-        graphics.fill(this.panelLeft, this.panelTop, this.panelRight, this.panelTop + 22, 0xFF9A4DCC);
-
-        super.render(graphics, mouseX, mouseY, partialTick);
-
-        graphics.drawCenteredString(this.font, Component.translatable("screen.translator.settings.title"), this.width / 2, this.panelTop + 7, 0xFFFFFFFF);
-        graphics.drawString(this.font, Component.translatable("screen.translator.settings.api_url"), this.panelLeft + 12, this.panelTop + 28, 0xFFFFFFFF);
-        graphics.drawString(this.font, Component.translatable("screen.translator.settings.target_language_hint"), this.panelLeft + 12, this.panelTop + 78, 0xFFFFFFFF);
-    }
-
-    @Override
     public void onClose() {
-        if (this.minecraft != null) {
-            this.minecraft.setScreen(this.previousScreen);
-        }
+        super.onClose();
     }
 
     @Override
